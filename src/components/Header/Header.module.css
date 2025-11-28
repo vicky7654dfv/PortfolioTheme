@@ -1,0 +1,494 @@
+/* Base Styles */
+.header {
+  /* Dark Deep Violet/Slate Gradient to match Light Purple Logo */
+  background: linear-gradient(135deg, #1a103d 70%, #2a1f47 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.headerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  /* Initial large gap */
+  gap: 8rem; 
+  position: relative;
+}
+
+/* Logo Styles */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logoContainer:hover {
+  transform: scale(1.05);
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  /* Purple glow drop shadow */
+  filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: "Arial", sans-serif; 
+  white-space: nowrap;
+  /* White to Light Purple Gradient Text */
+  background: linear-gradient(to right, #ffffff 0%, #e9d5ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 10px rgba(168, 85, 247, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem; 
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
+/* Home Dropdown Wrapper */
+.homeDropdown {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.homeButton {
+  background: none;
+  border: none;
+  color: #e2e8f0;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.homeButton:hover {
+  color: #c084fc; /* Light Purple */
+  background: rgba(192, 132, 252, 0.1);
+}
+
+/* SMOOTH DROPDOWN ANIMATION CSS */
+.dropdownMenu {
+  position: absolute;
+  top: 100%; /* Positions it right below the header */
+  left: 0;
+  background: #1e1b4b; /* Deep Indigo background */
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 0;
+  min-width: 180px;
+  z-index: 1001;
+  border: 1px solid #4c1d95; /* Dark purple border */
+  
+  /* Smooth Animation Logic */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Trigger animation on hover of parent */
+.homeDropdown:hover .dropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdownItem {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: #e9d5ff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+
+.dropdownItem:hover {
+  background: #7e22ce; /* Vibrant Purple */
+  color: white;
+  padding-left: 1.8rem; /* Slight slide effect */
+}
+
+/* Navigation Links */
+.navLink {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Purple Underline Slide Effect */
+.navLink::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #c084fc; /* Light Purple */
+  transition: width 0.3s ease;
+}
+
+.navLink:hover {
+  color: #d8b4fe;
+}
+
+.navLink:hover::before {
+  width: 100%;
+}
+
+/* Mobile Menu Button */
+.mobileMenuButton {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  gap: 5px;
+  position: relative;
+  z-index: 1002;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.mobileMenuButton:hover {
+  background: rgba(192, 132, 252, 0.1);
+}
+
+.hamburgerLine {
+  width: 24px;
+  height: 2px;
+  background-color: #e2e8f0;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* X Close Button Styles */
+.mobileMenuButton.close .hamburgerLine:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+  background-color: #c084fc;
+}
+
+.mobileMenuButton.close .hamburgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.mobileMenuButton.close .hamburgerLine:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+  background-color: #c084fc;
+}
+
+/* Mobile Navigation */
+.mobileNav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #0f0518; /* Very dark background */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  padding: 1.5rem;
+  z-index: 999;
+  border-top: 1px solid #3b0764;
+  border-bottom: 2px solid #a855f7;
+}
+
+.mobileNav.open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: slideDownMobile 0.4s ease forwards;
+}
+
+@keyframes slideDownMobile {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Overlay */
+.mobileOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3px);
+  z-index: 998;
+}
+
+.mobileOverlay.open {
+  display: block;
+}
+
+.mobileHomeSection {
+  border-bottom: 1px solid #3b0764;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  border-radius: 8px;
+  background: #1e1b4b;
+  overflow: hidden;
+}
+
+.mobileHomeButton {
+  background: none;
+  border: none;
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 1rem 0;
+  width: 100%;
+  text-align: center;
+  font-family: inherit;
+  transition: background-color 0.2s ease;
+}
+
+.mobileHomeButton:hover {
+  background: #3b0764;
+  color: #d8b4fe;
+}
+
+.mobileDropdownMenu {
+  padding: 0.5rem;
+  background: #0f0518;
+  animation: fadeIn 0.3s ease;
+}
+
+.mobileDropdownItem {
+  display: block;
+  padding: 0.75rem 0;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.mobileDropdownItem:hover {
+  color: white;
+  background: #7e22ce;
+}
+
+.mobileNavLink {
+  display: block;
+  padding: 1rem 0;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 1px solid #1e1b4b;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 0.25rem;
+}
+
+.mobileNavLink:hover {
+  background: rgba(192, 132, 252, 0.1);
+  color: #d8b4fe;
+}
+
+
+/* ===========================
+   MEDIA QUERIES (Ordered)
+   =========================== */
+
+/* 1024px Media Query */
+/* Adjusted to fix the large gap from the base styles */
+@media (max-width: 1024px) {
+  .headerContainer {
+    padding: 0 2rem;
+    justify-content: space-between;
+    gap: 2rem; /* Drastically reduced from 8rem to fit tablet screen */
+  }
+
+  .logoWrapper {
+    gap: 1rem;
+  }
+
+  .desktopNav {
+    gap: 0.8rem;
+    margin-left: 0; /* Removed auto margin to fit tight space */
+  }
+
+  .navLink {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .logoText {
+    font-size: 1.25rem;
+  }
+}
+
+/* 768px Media Query */
+@media (max-width: 768px) {
+  .headerContainer {
+    height: 70px;
+    padding: 0 1.5rem;
+    justify-content: space-between;
+    gap: 0; /* Gap irrelevant here as justified between */
+  }
+
+  /* Hide Desktop Nav */
+  .desktopNav {
+    display: none;
+  }
+
+  /* Show Mobile Button */
+  .mobileMenuButton {
+    display: flex;
+  }
+
+  .mobileNav {
+    display: none;
+  }
+
+  .mobileNav.open {
+    display: flex;
+  }
+
+  /* Reset Mobile Styling overrides */
+  .mobileHomeSection {
+    background: transparent;
+    border-bottom: 1px solid #3b0764;
+  }
+
+  .mobileHomeButton {
+    margin: 0;
+  }
+
+  .logoText {
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    height: 35px;
+  }
+
+  .logoWrapper {
+    gap: 1rem;
+  }
+}
+
+/* 425.6px Media Query */
+@media (max-width: 425.6px) {
+  .headerContainer {
+    padding: 0 1rem;
+    height: 70px;
+  }
+
+  .logoText {
+    font-size: 1.1rem;
+  }
+
+  .logo {
+    height: 32px;
+  }
+
+  .mobileNav {
+    padding: 1rem;
+  }
+
+  .mobileNavLink {
+    font-size: 1rem;
+    padding: 0.75rem 0;
+  }
+  
+  .logoWrapper {
+    gap: 0.8rem;
+  }
+}
+
+/* 375.2px Media Query */
+@media (max-width: 375.2px) {
+  .headerContainer {
+    padding: 0 0.75rem;
+  }
+
+  .logoText {
+    font-size: 1rem;
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+  .logoWrapper {
+    gap: 0.5rem;
+  }
+
+  .mobileNav {
+    padding: 0.75rem;
+  }
+
+  .mobileNavLink {
+    font-size: 0.9rem;
+    padding: 0.6rem 0;
+  }
+
+  .mobileHomeButton {
+    font-size: 0.95rem;
+    padding: 0.6rem 0;
+  }
+
+  .mobileDropdownItem {
+    font-size: 0.85rem;
+    padding: 0.5rem 0;
+  }
+}

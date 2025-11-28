@@ -1,0 +1,107 @@
+/* Base Styles */
+.skillsSection {
+  background: linear-gradient(-400deg, #5e53ff 0%, #5e1c37 100%);
+  padding: 5rem 0;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.2rem;
+  color: white;
+  margin-bottom: 3rem;
+}
+
+.highlight {
+  color: #db2777; /* Blush */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background: #161e2e;
+  padding: 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 1px solid #1e293b;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow Effect on Hover using CSS Variable */
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--hover-color);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.card:hover .iconBox {
+  transform: scale(1.1);
+}
+
+.iconBox {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.skillName {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.skillLevel {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* ===========================
+   MEDIA QUERIES 
+   =========================== */
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .container { padding: 0 2rem; }
+  .grid { gap: 1.5rem; }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .heading { font-size: 2rem; }
+}
+
+/* 425.6px */
+@media (max-width: 425.6px) {
+  .skillsSection { padding: 3rem 0; }
+  .grid { grid-template-columns: 1fr; }
+  .card { padding: 1.5rem; flex-direction: row; justify-content: flex-start; gap: 1rem; }
+  .iconBox { margin-bottom: 0; width: 40px; height: 40px; }
+}
+
+/* 375.2px */
+@media (max-width: 375.2px) {
+  .heading { font-size: 1.8rem; }
+}

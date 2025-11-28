@@ -1,0 +1,137 @@
+/* Base Styles */
+.aboutSection {
+  background: linear-gradient(360deg, #29255e 0%, #831843 100%);
+  padding: 5rem 0;
+  border-top: 2px solid #ff00ea;
+  position: relative;
+  /* Single container fade */
+  animation: fadeIn 1s ease-in-out; 
+  box-shadow: 0 -6px 18px rgba(255, 0, 234, 0.6);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.subTitle {
+  color: #db2777; /* Pink/Blush */
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: #a855f7; /* Purple */
+}
+
+.description {
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.softSkills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skillTag {
+  background: rgba(219, 39, 119, 0.1);
+  color: #fbcfe8;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid #db2777;
+}
+
+/* Stats Grid */
+.statsWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.statCard {
+  background: #1e293b;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  border-bottom: 3px solid #7c3aed;
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  background: #252e42;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* ===========================
+   MEDIA QUERIES 
+   =========================== */
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .container { padding: 0 2rem; }
+  .contentGrid { gap: 2rem; }
+  .title { font-size: 2rem; }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .contentGrid { grid-template-columns: 1fr; gap: 3rem; }
+  .statsWrapper { max-width: 500px; margin: 0 auto; width: 100%; }
+  .textWrapper { text-align: center; }
+  .softSkills { justify-content: center; }
+}
+
+/* 425.6px */
+@media (max-width: 425.6px) {
+  .aboutSection { padding: 3rem 0; }
+  .statsWrapper { grid-template-columns: 1fr; }
+  .title { font-size: 1.8rem; }
+  .statCard { padding: 1.5rem; }
+}
+
+/* 375.2px */
+@media (max-width: 375.2px) {
+  .container { padding: 0 1rem; }
+  .title { font-size: 1.6rem; }
+  .statNumber { font-size: 2rem; }
+}
