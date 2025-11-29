@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Resume.module.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import cvTemp from "../../assets/HomePage1/Banner1/cvTemp.pdf"; 
+import cvTemp from "../../assets/HomePage1/Banner1/CVTemp.pdf"; 
 
 const Resume = () => {
   const navigate = useNavigate();
