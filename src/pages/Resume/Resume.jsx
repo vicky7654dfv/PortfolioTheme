@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Resume.module.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import cvFile from "../../assets/HomePage1/Banner1/cvTemp.pdf"; 
+import cvTemp from "../../assets/HomePage1/Banner1/cvTemp.pdf"; 
 
 const Resume = () => {
   const navigate = useNavigate();
@@ -81,7 +81,7 @@ const Resume = () => {
             </div>
             {/* Download PDF Button */}
             <a 
-              href={cvFile} 
+              href={cvTemp} 
               download="Henry_Martin_Resume.pdf" 
               className={styles.downloadBtn}
             >
