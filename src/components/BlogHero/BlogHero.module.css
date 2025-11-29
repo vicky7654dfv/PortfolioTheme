@@ -1,0 +1,135 @@
+/* Base Styles */
+.heroSection {
+  /* Theme Gradient */
+  background: linear-gradient(135deg, #1e1b4b 0%, #831843 100%);
+  padding: 2.5rem 0 3rem 0; /* Top padding, bottom reduced to merge with grid */
+  position: relative;
+  /* Outer fade animation */
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.contentWrapper {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  color: #fbcfe8; /* Light Pink */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.line {
+  width: 40px;
+  height: 2px;
+  background: #db2777; /* Blush accent */
+}
+
+.title {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+.highlight {
+  color: #db2777;
+  position: relative;
+  display: inline-block;
+}
+
+/* Underline effect for 'Blog' */
+.highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: rgba(219, 39, 119, 0.3);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.description {
+  color: #cbd5e1; /* Slate-300 */
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+/* ===========================
+   MEDIA QUERIES 
+   =========================== */
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 3rem;
+  }
+  .description {
+    font-size: 1.1rem;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 2.5rem 0 2rem 0;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+/* 425.6px */
+@media (max-width: 425.6px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  .label {
+    font-size: 0.8rem;
+  }
+  .line {
+    width: 30px;
+  }
+  .description {
+    font-size: 1rem;
+  }
+}
+
+/* 375.2px */
+@media (max-width: 375.2px) {
+  .heroSection {
+    padding: 2.5rem 0 2rem 0;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+}

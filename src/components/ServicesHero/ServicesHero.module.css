@@ -1,0 +1,190 @@
+/* Base Styles */
+.heroSection {
+  background: linear-gradient(135deg, #1e1b4b 0%, #410f23 100%);
+  padding: 2.5rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  /* Single container fade */
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.textColumn {
+  position: sticky;
+  top: 100px; /* Sticky effect on desktop */
+}
+
+.subTitle {
+  color: #fbcfe8; /* Light Pink */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.mainTitle {
+  font-size: 3.5rem;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+.highlight {
+  color: #db2777; /* Blush/Magenta */
+}
+
+.description {
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  max-width: 90%;
+}
+
+.ctaBtn {
+  padding: 1rem 2rem;
+  background: white;
+  color: #831843;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ctaBtn:hover {
+  background: #db2777;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gridColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.serviceCard {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.serviceCard:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  border-color: #db2777;
+}
+
+.cardTitle {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cardDesc {
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.line {
+  width: 50px;
+  height: 3px;
+  background: #db2777;
+  transition: width 0.3s ease;
+}
+
+.serviceCard:hover .line {
+  width: 100%;
+}
+
+/* ===========================
+   MEDIA QUERIES 
+   =========================== */
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+    gap: 2rem;
+  }
+  .mainTitle {
+    font-size: 2.8rem;
+  }
+  .serviceCard {
+    padding: 2rem;
+  }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 2.5rem 0;
+  }
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .textColumn {
+    position: static;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  .description {
+    margin: 0 auto 2rem auto;
+  }
+}
+
+/* 425.6px */
+@media (max-width: 425.6px) {
+  .mainTitle {
+    font-size: 2.2rem;
+  }
+  .subTitle {
+    font-size: 0.9rem;
+  }
+  .serviceCard {
+    padding: 1.5rem;
+  }
+  .cardTitle {
+    font-size: 1.3rem;
+  }
+}
+
+/* 375.2px */
+@media (max-width: 375.2px) {
+  .heroSection {
+    padding: 3rem 0;
+  }
+  .mainTitle {
+    font-size: 1.8rem;
+  }
+  .ctaBtn {
+    width: 100%;
+  }
+}

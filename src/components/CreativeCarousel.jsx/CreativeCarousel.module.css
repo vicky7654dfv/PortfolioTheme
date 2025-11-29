@@ -1,0 +1,237 @@
+/* =========================================
+   BASE STYLES
+   ========================================= */
+.carouselSection {
+  background: #0f172a; /* Darker bg for contrast */
+  padding: 2.5rem 0; /* Standard spacing */
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.header h2 {
+  font-size: 3rem;
+  color: white;
+  font-weight: 800;
+}
+
+.highlight {
+  color: #db2777;
+}
+
+.scrollContainer {
+  width: 100%;
+  overflow-x: auto;
+  padding: 2rem 0;
+  /* Hide Scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.track {
+  display: flex;
+  gap: 3rem;
+  padding: 0 4rem; /* Initial padding */
+  width: fit-content;
+}
+
+/* The "Different Shape" effect: Skew */
+.skewCard {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  transform: skewX(-10deg);
+  transition: all 0.4s ease;
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  cursor: pointer;
+  flex-shrink: 0; /* Prevent squishing */
+}
+
+.skewCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.25); /* slight black layer */
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.skewCard:hover::after {
+  opacity: 0;
+}
+
+.skewCard img {
+  width: 140%; /* Wider to cover skew */
+  height: 100%;
+  object-fit: cover;
+  transform: skewX(10deg) translateX(-15%); /* Un-skews image */
+  transition: transform 0.4s ease;
+}
+
+.cardContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(to top, #db2777, transparent);
+  transform: skewX(10deg) translateY(100%); /* Hidden initially */
+  transition: transform 0.4s ease;
+  z-index: 3;
+}
+
+.cardContent h3 {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Hover Effects (Desktop) */
+.skewCard:hover {
+  transform: skewX(-10deg) translateY(-10px) scale(1.05);
+  border-color: #db2777;
+  z-index: 2;
+  box-shadow: 0 15px 40px rgba(219, 39, 119, 0.3);
+}
+
+.skewCard:hover img {
+  transform: skewX(10deg) translateX(-15%) scale(1.07);
+}
+
+.skewCard:hover .cardContent {
+  transform: skewX(10deg) translateY(0);
+}
+
+
+/* =========================================
+   MEDIA QUERIES (Ordered)
+   ========================================= */
+
+/* 1024px Media Query */
+@media (max-width: 1024px) {
+  .carouselSection {
+    padding: 2.5rem 2.5rem;
+  }
+
+  .header h2 {
+    font-size: 2.5rem;
+  }
+
+  .track {
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .skewCard {
+    width: 280px;
+    height: 380px;
+  }
+}
+
+/* 768px Media Query */
+@media (max-width: 768px) {
+  .header h2 {
+    font-size: 2.2rem;
+  }
+
+  .track {
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+  }
+
+  /* Reset Skew for Tablets/Mobile for better UX */
+  .skewCard {
+    width: 260px;
+    height: 350px;
+    transform: none; /* Remove skew */
+    border-radius: 16px;
+  }
+
+  .skewCard img {
+    width: 100%;
+    transform: none; /* Remove counter-skew */
+  }
+
+  .cardContent {
+    /* Always show content on mobile (no hover needed) */
+    transform: translateY(0); 
+    background: linear-gradient(to top, rgba(219, 39, 119, 0.9), transparent);
+    padding: 1.5rem;
+  }
+
+  /* Disable complex hover transforms on touch devices */
+  .skewCard:hover {
+    transform: translateY(-5px);
+    border-color: #db2777;
+  }
+
+  .skewCard:hover img {
+    transform: scale(1.05);
+  }
+
+  .skewCard:hover .cardContent {
+    transform: translateY(0);
+  }
+}
+
+/* 425.6px Media Query */
+@media (max-width: 425.6px) {
+  .carouselSection {
+    padding: 2.5rem 0;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .header h2 {
+    font-size: 1.8rem;
+  }
+
+  .track {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .skewCard {
+    width: 240px;
+    height: 320px;
+  }
+
+  .cardContent h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* 375.2px Media Query */
+@media (max-width: 375.2px) {
+  .header h2 {
+    font-size: 1.6rem;
+  }
+
+  .skewCard {
+    width: 220px;
+    height: 300px;
+  }
+}

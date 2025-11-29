@@ -1,0 +1,264 @@
+/* Base Styles */
+.aboutHero {
+  background: linear-gradient(135deg, #1e1b4b 0%, #831843 100%);
+  padding: 2.5rem 0;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Left Column */
+.imageCol {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+}
+
+.profileImg {
+  width: 100%;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.profileImg:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 25px 25px 0px rgba(0, 0, 0, 0.2);
+}
+
+.floatingStat {
+  position: absolute;
+  bottom: 30px;
+  left: -20px;
+  background: #db2777; /* Blush Pink */
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  color: white;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.statNumber {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+/* Right Column */
+.subHeading {
+  color: #fbcfe8; /* Light Pink */
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.mainHeading {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.highlight {
+  color: #db2777;
+}
+
+.bio {
+  color: #e2e8f0;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  border-left: 3px solid #db2777;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin-bottom: 0.2rem;
+}
+
+.value {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.valueHighlight {
+  color: #4ade80; /* Green for available */
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.btnWrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.primaryBtn {
+  padding: 1rem 2rem;
+  background: #db2777;
+  color: white;
+  border: none;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.primaryBtn:hover {
+  background: #be185d;
+  transform: translateY(-2px);
+}
+
+.secondaryBtn {
+  padding: 1rem 2rem;
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.secondaryBtn:hover {
+  border-color: #db2777;
+  color: #db2777;
+}
+
+/* ===========================
+   MEDIA QUERIES 
+   =========================== */
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .container {
+    gap: 2rem;
+  }
+  .mainHeading {
+    font-size: 2.8rem;
+  }
+  .profileImg {
+    max-width: 350px;
+  }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .imageCol {
+    margin-bottom: 3rem;
+  }
+  .floatingStat {
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+    bottom: -20px;
+  }
+  .bio {
+    border-left: none;
+    padding: 0;
+  }
+  .infoGrid {
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto 2rem auto;
+  }
+  .btnWrapper {
+    justify-content: center;
+  }
+}
+
+/* 425.6px */
+@media (max-width: 425.6px) {
+  .aboutHero {
+    padding: 2.5rem 0;
+  }
+  .mainHeading {
+    font-size: 2.2rem;
+  }
+  .infoGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .profileImg {
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* 375.2px */
+@media (max-width: 375.2px) {
+  .mainHeading {
+    font-size: 1.8rem;
+  }
+  .primaryBtn,
+  .secondaryBtn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

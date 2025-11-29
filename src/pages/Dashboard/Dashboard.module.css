@@ -1,0 +1,688 @@
+/* ========== VARIABLES & HIGH CONTRAST THEME ========== */
+:root {
+  /* Backgrounds - Deep Black Hierarchy */
+  --bg-deep: #000000; /* Main background */
+  --bg-surface: #050505; /* Secondary backgrounds */
+  --bg-card: #0f172a; /* Dark Slate Card (Deep Violet Theme) */
+  --bg-element: #1e1b4b; /* Inner elements */
+  --bg-hover: #334155; /* Hover states */
+
+  /* Borders */
+  --border-subtle: #27272a;
+  --border-active: #db2777; /* Blush Pink Border */
+
+  /* Typography */
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
+  --text-muted: #94a3b8;
+
+  /* Accents (Henry Martin Theme) */
+  --accent-primary: #db2777; /* Blush Pink */
+  --accent-glow: rgba(219, 39, 119, 0.3);
+
+  --success: #10b981;
+  --success-bg: rgba(16, 185, 129, 0.1);
+
+  --danger: #ef4444;
+  --danger-bg: rgba(239, 68, 68, 0.1);
+
+  /* Fonts */
+  --font-main: "Arial", sans-serif;
+  --font-mono: "Courier New", monospace;
+}
+
+/* ========== LAYOUT & RESET ========== */
+.dashboardWrapper {
+  /* Requested Theme Gradient for Outer Container */
+  background: linear-gradient(135deg, #1e1b4b 0%, #831843 100%);
+  min-height: 100vh;
+  padding: 2.5rem 0; /* Outer padding as per requirement */
+  font-family: var(--font-main);
+  color: var(--text-secondary);
+}
+
+.dashboardContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ========== MAIN CONTENT ========== */
+.mainContent {
+  /* Inner container background to separate from outer gradient */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 80vh;
+}
+
+/* Loader */
+.loaderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  gap: 1.5rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid var(--accent-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animations */
+.sectionContent {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== WELCOME BANNER ========== */
+.welcomeBanner {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.welcomeBanner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-primary);
+  box-shadow: 0 0 10px var(--accent-primary);
+}
+
+.welcomeText h2 {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.welcomeText p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.quickActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.actionBtn,
+.actionBtnPrimary {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.actionBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+}
+
+.actionBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.actionBtnPrimary {
+  background: var(--accent-primary);
+  border: 1px solid var(--accent-primary);
+  color: white;
+}
+
+.actionBtnPrimary:hover {
+  background: #be185d;
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* ========== STATS GRID ========== */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.statCard:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-3px);
+}
+
+.statHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.statIcon {
+  font-size: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.statChange {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.trendUp {
+  color: var(--success);
+  background: var(--success-bg);
+}
+.trendStable {
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.statCard h3 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin: 0 0 0.25rem 0;
+}
+
+.statCard p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ========== CHARTS & GRIDS COMMON ========== */
+.chartsSection {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.chartCard,
+.gridCard {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chartHeader,
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chartHeader h3,
+.cardHeader h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.chartSubtitle {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.chartBtn,
+.smallBtn {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chartBtn:hover,
+.smallBtn:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
+.liveIndicator {
+  font-size: 0.75rem;
+  color: var(--success);
+  font-weight: 600;
+  background: var(--success-bg);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.gridTwoColumn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* ========== BAR CHART ========== */
+.barChartContainer {
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding-bottom: 0.5rem;
+}
+
+.barGroup {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.bar {
+  width: 100%;
+  background: var(--accent-primary);
+  opacity: 0.8;
+  border-radius: 4px 4px 0 0;
+  transition: all 0.3s;
+  position: relative;
+  /* Simple growth animation */
+  animation: growBar 1s ease-out backwards;
+}
+
+@keyframes growBar {
+  from {
+    height: 0;
+  }
+}
+
+.bar:hover {
+  opacity: 1;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.barTooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #334155;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+  z-index: 5;
+}
+
+.bar:hover .barTooltip {
+  opacity: 1;
+}
+
+.barLabel {
+  margin-top: 8px;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* ========== DONUT CHART ========== */
+.donutChartContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex: 1;
+}
+
+.donutChart {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--bg-element);
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.donutSegment {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  /* Conic gradient hack for donut chart */
+  background: conic-gradient(
+    from 0deg,
+    var(--color) 0%,
+    var(--color) calc(var(--percentage) * 1%),
+    transparent calc(var(--percentage) * 1%),
+    transparent 100%
+  );
+  transform: rotate(calc(var(--offset) * 3.6deg));
+  clip-path: circle(50%); /* Ensures perfect circle */
+  /* Mask to create the hole */
+  -webkit-mask: radial-gradient(transparent 60%, black 61%);
+  mask: radial-gradient(transparent 60%, black 61%);
+}
+
+.donutCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.donutCenter span {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+.donutCenter strong {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.legendColor {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+/* ========== LIST ITEMS (PROJECTS) ========== */
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow-y: auto;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.listItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent-primary);
+}
+
+.projectIcon {
+  font-size: 1.5rem;
+}
+
+.itemInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemName {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.itemSub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.itemMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  width: 100px;
+}
+
+.loadBar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.loadFill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease-out;
+}
+
+.itemStatus {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* ========== UTILIZATION (HEALTH) ========== */
+.utilizationGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 0.5rem;
+}
+
+.utilizationItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.utilLabel {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  width: 100px;
+}
+
+.utilBar {
+  flex: 1;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.utilFill {
+  height: 100%;
+  background: var(--success);
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+
+.utilValue {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  width: 50px;
+  text-align: right;
+  font-family: var(--font-mono);
+}
+
+/* ========== IMAGE STRIP ========== */
+.imageStrip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.imageCard {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.imageCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.imageCard:hover img {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .chartsSection {
+    grid-template-columns: 1fr;
+  }
+  .imageStrip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 1.5rem;
+  }
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .gridTwoColumn {
+    grid-template-columns: 1fr;
+  }
+  .welcomeBanner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .imageStrip {
+    grid-template-columns: 1fr;
+  }
+  .donutChartContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* 425.6px */
+@media (max-width: 425.6px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  .welcomeText h2 {
+    font-size: 1.5rem;
+  }
+  .mainContent {
+    padding: 1rem;
+  }
+}
+
+/* 375.2px */
+@media (max-width: 375.2px) {
+  .quickActions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .actionBtn,
+  .actionBtnPrimary {
+    width: 100%;
+    justify-content: center;
+  }
+}

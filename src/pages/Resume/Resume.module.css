@@ -1,0 +1,450 @@
+/* =========================================
+   1. Normal CSS (Desktop / Base)
+   ========================================= */
+
+/* Fade Animation Keyframes (Simulating AOS Fade) */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.resumePageWrapper {
+  /* Requested Gradient Theme */
+  background: linear-gradient(135deg, #1e1b4b 0%, #831843 100%);
+  /* Exact Padding Requirement: 2.5rem top and bottom */
+  padding: 2.5rem 0;
+  min-height: 100vh;
+  color: white;
+  /* Outer Container Fade Animation */
+  animation: fadeIn 1s ease-in-out;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Page Header */
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem; /* Reduced Gap */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1.5rem;
+}
+
+.subHeading {
+  color: #db2777; /* Blush Pink */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.mainHeading {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.downloadBtn {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.7rem 1.4rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none; /* For Anchor Tag */
+}
+
+.downloadBtn:hover {
+  background: #db2777;
+  border-color: #db2777;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(219, 39, 119, 0.4);
+}
+
+/* Grid Layout for Edu/Exp */
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem; /* Reduced Gap */
+  margin-bottom: 3rem; /* Reduced Gap */
+}
+
+.columnTitle {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fbcfe8;
+}
+
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  padding-left: 1.5rem;
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 1.5rem; /* Reduced Gap between items */
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.timelineItem:last-child {
+  margin-bottom: 0;
+}
+
+.timelineItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #db2777;
+  transform: translateX(5px);
+}
+
+.timelineDot {
+  position: absolute;
+  left: -2.05rem; /* Aligned with reduced padding */
+  top: 1.5rem;
+  width: 14px;
+  height: 14px;
+  background: #db2777;
+  border-radius: 50%;
+  border: 3px solid #1e1b4b; 
+  transition: transform 0.3s ease;
+}
+
+.timelineItem:hover .timelineDot {
+  transform: scale(1.3);
+  background: #fbcfe8;
+}
+
+.itemTitle {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+  color: white;
+}
+
+.itemPlace {
+  display: block;
+  font-size: 0.85rem;
+  color: #db2777;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.itemDesc {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Skills Wrapper */
+.skillsWrapper {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 3rem; /* Reduced Gap */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.skillHeading {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #db2777;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+/* Tag Cloud */
+.tagCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tagCloud span {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+
+.tagCloud span:hover {
+  background: #db2777;
+  border-color: #db2777;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Progress Bars */
+.progressList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.progressItem {
+  width: 100%;
+}
+
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+}
+
+.progressBarBg {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, #db2777, #fbcfe8);
+  border-radius: 4px;
+  transition: width 1.5s ease-in-out;
+}
+
+/* Awards Section */
+.awardsTitle {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.awardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem; /* Reduced Gap */
+}
+
+.awardCard {
+  background: #1e293b;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.awardCard:hover {
+  transform: translateY(-5px);
+  border-color: #db2777;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.awardYear {
+  background: rgba(219, 39, 119, 0.1);
+  color: #fbcfe8;
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.awardName {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+  color: white;
+}
+
+.awardOrg {
+  display: block;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 0.8rem;
+}
+
+.awardDesc {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+/* Icon for flip effect concept */
+.awardIcon {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.03);
+  transition: all 0.4s;
+  transform: rotate(15deg);
+}
+
+.awardCard:hover .awardIcon {
+  color: rgba(219, 39, 119, 0.15);
+  transform: rotate(0deg) scale(1.1);
+}
+
+/* Footer Action */
+.footerAction {
+  margin-top: 3rem; /* Reduced Gap */
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+}
+
+.footerAction p {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #e2e8f0;
+}
+
+.contactBtn {
+  background: #db2777;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.contactBtn:hover {
+  background: white;
+  color: #831843;
+}
+
+
+/* =========================================
+   2. 1024px Media Query (Tablet Landscape)
+   ========================================= */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .gridContainer {
+    gap: 1.5rem;
+  }
+
+  .skillsWrapper {
+    padding: 1.5rem;
+  }
+
+  .awardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================
+   3. 768px Media Query (Tablet Portrait)
+   ========================================= */
+@media (max-width: 768px) {
+  .pageHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .downloadBtn {
+    align-self: flex-start;
+  }
+
+  .gridContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .mainHeading {
+    font-size: 2.5rem;
+  }
+}
+
+/* =========================================
+   4. 425.6px Media Query (Large Mobile)
+   ========================================= */
+@media (max-width: 425.6px) {
+  .resumePageWrapper {
+    padding: 2.5rem 0; /* Maintained Requirement */
+  }
+
+  .mainHeading {
+    font-size: 2rem;
+  }
+
+  .columnTitle {
+    font-size: 1.4rem;
+  }
+
+  .timelineItem {
+    padding: 1rem;
+  }
+  
+  .awardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .footerAction p {
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================================
+   5. 375.2px Media Query (Small Mobile)
+   ========================================= */
+@media (max-width: 375.2px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .mainHeading {
+    font-size: 1.8rem;
+  }
+
+  .timeline {
+    padding-left: 1.2rem;
+  }
+
+  .timelineDot {
+    left: -1.75rem; 
+    width: 12px;
+    height: 12px;
+  }
+
+  .contactBtn {
+    width: 100%;
+  }
+}

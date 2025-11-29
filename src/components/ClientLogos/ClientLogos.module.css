@@ -1,0 +1,71 @@
+.clientSection {
+  background: linear-gradient(180deg, #632e57 0%, #161818 100%);
+  padding: 4rem 0;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.label {
+  color: #ffffff;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.logoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.logoBox {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(134, 243, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s;
+  cursor: default;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff; /* Muted */
+  transition: all 0.3s;
+}
+
+.logoBox:hover {
+  border-color: #db2777;
+  background: rgba(219, 39, 119, 0.05);
+  transform: translateY(-5px);
+}
+
+.logoBox:hover .logoText {
+  color: white;
+  text-shadow: 0 0 10px rgba(219, 39, 119, 0.5);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .logoGrid { gap: 1.5rem; }
+}
+@media (max-width: 768px) {
+  .logoGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 375.2px) {
+  .logoGrid { grid-template-columns: 1fr; }
+}

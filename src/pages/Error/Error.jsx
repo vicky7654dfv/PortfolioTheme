@@ -20,11 +20,10 @@ const Error = () => {
   return (
     <div className={styles.container}>
       <div className={styles.errorContent}>
-        {/* Abstract Tech Background Elements */}
+        {/* Abstract Background Elements */}
         <div className={styles.backgroundElements}>
           <div className={styles.techCircle1}></div>
           <div className={styles.techCircle2}></div>
-          <div className={styles.gridLines}></div>
         </div>
 
         {/* Main Error Content */}
@@ -49,11 +48,6 @@ const Error = () => {
             into the digital ether.
           </p>
 
-          <p className={styles.suggestion}>
-            Please re-calibrate your navigation or return to the main dashboard 
-            to execute a new query.
-          </p>
-
           <div className={styles.buttonGroup}>
             <button 
               className={styles.primaryButton}
@@ -69,32 +63,6 @@ const Error = () => {
               <i className="fa-solid fa-arrow-left-long"></i>
               Go Back
             </button>
-          </div>
-        </div>
-
-        {/* Terminal Status Box */}
-        <div className={styles.terminalBox}>
-          <div className={styles.terminalHeader}>
-            <div className={styles.dot}></div>
-            <div className={styles.dot}></div>
-            <div className={styles.dot}></div>
-            <span>system_status.log</span>
-          </div>
-          <div className={styles.terminalBody}>
-            <div className={styles.statusItem}>
-              <span className={styles.cmd}>&gt; code:</span>
-              <span className={styles.valError}>404_NOT_FOUND</span>
-            </div>
-            <div className={styles.statusItem}>
-              <span className={styles.cmd}>&gt; path:</span>
-              <span className={styles.valPath}>{window.location.pathname}</span>
-            </div>
-            <div className={styles.statusItem}>
-              <span className={styles.cmd}>&gt; time:</span>
-              <span className={styles.valTime}>
-                {new Date().toLocaleTimeString()}
-              </span>
-            </div>
           </div>
         </div>
       </div>

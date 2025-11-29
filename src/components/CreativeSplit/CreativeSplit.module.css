@@ -1,0 +1,158 @@
+/* Base Styles */
+.splitSection {
+  background: linear-gradient(135deg, #1e1b4b 0%, #831843 100%);
+  padding: 2.5rem 0;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.imgWrapper {
+  flex: 1;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  border-radius: 8px;
+  filter: grayscale(100%);
+  transition: all 0.5s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.imgWrapper:hover .image {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
+
+.overlayText {
+  position: absolute;
+  bottom: 20px;
+  left: -20px;
+  background: #0f172a;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  border-left: 5px solid #db2777;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.textWrapper {
+  flex: 1;
+}
+
+.bigText {
+  font-size: 4rem;
+  color: white;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  font-weight: 900;
+}
+
+.gradientText {
+  background: linear-gradient(to right, #db2777, #fbcfe8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.desc {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 90%;
+}
+
+.ctaBtn {
+  padding: 1rem 2.5rem;
+  background: white;
+  color: #1e1b4b;
+  border: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+
+.ctaBtn:hover {
+  background: #db2777;
+  color: white;
+  box-shadow: 0 0 20px rgba(219, 39, 119, 0.5);
+}
+
+/* ===========================
+   MEDIA QUERIES 
+   =========================== */
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .container {
+    gap: 3rem;
+    padding: 0 2rem;
+  }
+  .bigText {
+    font-size: 3.2rem;
+  }
+}
+
+/* 768px */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .imgWrapper {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 2rem;
+  }
+  .textWrapper {
+    text-align: center;
+  }
+  .desc {
+    margin: 0 auto 2rem auto;
+  }
+}
+
+/* 425.6px */
+@media (max-width: 425.6px) {
+  .splitSection {
+    padding: 2.5rem 0;
+  }
+  .bigText {
+    font-size: 2.5rem;
+  }
+  .overlayText {
+    left: 0;
+    bottom: 0;
+    font-size: 0.8rem;
+  }
+}
+
+/* 375.2px */
+@media (max-width: 375.2px) {
+  .bigText {
+    font-size: 2.2rem;
+  }
+  .ctaBtn {
+    width: 100%;
+  }
+}

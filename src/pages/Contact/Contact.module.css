@@ -1,0 +1,468 @@
+/* =========================================
+   1. Normal CSS (Desktop / Base)
+   ========================================= */
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contactWrapper {
+  /* Requested Theme Gradient */
+  background: linear-gradient(135deg, #1e1b4b 0%, #831843 100%);
+  min-height: 100vh;
+  padding: 2.5rem 0;
+  color: #ffffff;
+  animation: fadeIn 1s ease-in-out;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Intro Section */
+.introSection {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mainTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.highlight {
+  color: #db2777; /* Blush Pink */
+  position: relative;
+  display: inline-block;
+}
+
+.subText {
+  color: #cbd5e1; /* Slate-300 */
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.subText strong {
+  color: #fbcfe8;
+  font-weight: 600;
+}
+
+/* Grid Layout */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* --- Left Column: Info --- */
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.infoCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.infoCard:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #db2777;
+  transform: translateX(5px);
+}
+
+.iconBox {
+  width: 50px;
+  height: 50px;
+  background: rgba(219, 39, 119, 0.1);
+  color: #fbcfe8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(219, 39, 119, 0.3);
+}
+
+.cardDetails h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.cardLabel {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardLink,
+.cardAddress {
+  color: #db2777;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-decoration: none;
+  font-style: normal;
+  line-height: 1.4;
+  display: block;
+}
+
+.cardLink:hover {
+  color: #fbcfe8;
+  text-decoration: underline;
+}
+
+/* Social Section */
+.socialSection {
+  margin-top: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.socialSection h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #e2e8f0;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.socialIcons button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialIcons button:hover {
+  background: #db2777;
+  color: white;
+  border-color: #db2777;
+  transform: translateY(-3px);
+}
+
+/* --- Right Column: Form & Map --- */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.formBox {
+  background: #0f172a;
+  padding: 3rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.formHeader {
+  margin-bottom: 2rem;
+}
+
+.formHeader h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.formHeader p {
+  color: #cbd5e1;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputGroup label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #94a3b8;
+}
+
+.required {
+  color: #db2777;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  background: #1e293b;
+  border: 1px solid #334155;
+  padding: 1rem;
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s;
+  font-family: inherit;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+  outline: none;
+  border-color: #db2777;
+  background: #2e1065;
+}
+
+.termsGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+.termsGroup input {
+  accent-color: #db2777;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.termBtn {
+  background: none;
+  border: none;
+  color: #db2777;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+}
+
+.submitBtn {
+  background: linear-gradient(to right, #db2777, #be185d);
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.submitBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(219, 39, 119, 0.3);
+}
+
+.formFooter {
+  margin-top: 2rem;
+  text-align: center;
+  border-top: 1px solid #334155;
+  padding-top: 1.5rem;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+/* Map Container */
+.mapContainer {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  filter: grayscale(100%) invert(92%) hue-rotate(180deg);
+  transition: filter 0.3s;
+  height: 300px;
+}
+
+.mapContainer:hover {
+  filter: none;
+  border-color: #db2777;
+}
+
+/* Popup Modal */
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.popupContent {
+  background: #1e293b;
+  padding: 3rem;
+  border-radius: 16px;
+  text-align: center;
+  border: 2px solid #db2777;
+  box-shadow: 0 0 50px rgba(219, 39, 119, 0.4);
+  max-width: 400px;
+  width: 90%;
+}
+
+.popupIcon {
+  width: 60px;
+  height: 60px;
+  background: #db2777;
+  color: white;
+  border-radius: 50%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+}
+
+.popupContent h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.popupContent p {
+  color: #cbd5e1;
+}
+
+/* =========================================
+   2. 1024px Media Query (Tablet Landscape)
+   ========================================= */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .mainTitle {
+    font-size: 3rem;
+  }
+}
+
+/* =========================================
+   3. 768px Media Query (Tablet Portrait)
+   ========================================= */
+@media (max-width: 768px) {
+  .contactWrapper {
+    padding: 2.5rem 0;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr; /* Stack */
+    gap: 3rem;
+  }
+
+  .infoColumn {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .infoCard {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .socialSection {
+    width: 100%;
+  }
+
+  .mainTitle {
+    font-size: 2.5rem;
+  }
+}
+
+/* =========================================
+   4. 425.6px Media Query (Large Mobile)
+   ========================================= */
+@media (max-width: 425.6px) {
+  .infoColumn {
+    flex-direction: column;
+  }
+
+  .formBox {
+    padding: 1.5rem;
+  }
+
+  .mainTitle {
+    font-size: 2rem;
+  }
+
+  .infoCard {
+    padding: 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .popupContent {
+    padding: 2rem;
+  }
+}
+
+/* =========================================
+   5. 375.2px Media Query (Small Mobile)
+   ========================================= */
+@media (max-width: 375.2px) {
+  .mainTitle {
+    font-size: 1.8rem;
+  }
+
+  .subText {
+    font-size: 1rem;
+  }
+
+  .socialIcons {
+    gap: 0.5rem;
+  }
+
+  .socialIcons button {
+    width: 40px;
+    height: 40px;
+  }
+}
