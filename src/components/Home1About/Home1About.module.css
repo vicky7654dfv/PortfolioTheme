@@ -1,12 +1,12 @@
 /* Base Styles */
 .aboutSection {
-  background: linear-gradient(360deg, #29255e 0%, #831843 100%);
+  background: #0f172a;
   padding: 5rem 0;
-  border-top: 2px solid #ff00ea;
+  border-top: 2px solid #0f172a;
   position: relative;
   /* Single container fade */
   animation: fadeIn 1s ease-in-out; 
-  box-shadow: 0 -6px 18px rgba(255, 0, 234, 0.6);
+  box-shadow: 0 -6px 18px #0f172a;
 }
 
 @keyframes fadeIn {
@@ -17,7 +17,7 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 1rem 1rem;
 }
 
 .contentGrid {

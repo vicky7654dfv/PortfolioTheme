@@ -1,7 +1,7 @@
 /* Base Styles */
 .carouselSection {
-  background: linear-gradient(135deg, #1e1b4b 0%, #831843 100%);
-  padding: 2.5rem 0;
+  background: #0f172a;
+  padding: 4rem 0;
   animation: fadeIn 1s ease-in-out;
 }
 

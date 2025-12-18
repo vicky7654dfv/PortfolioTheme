@@ -4,15 +4,21 @@
 
 /* Fade Animation Keyframes (Simulating AOS Fade) */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .resumePageWrapper {
   /* Requested Gradient Theme */
-  background: linear-gradient(135deg, #1e1b4b 0%, #831843 100%);
+  background: #0f172a;
   /* Exact Padding Requirement: 2.5rem top and bottom */
-  padding: 2.5rem 0;
+  padding: 4rem 0;
   min-height: 100vh;
   color: white;
   /* Outer Container Fade Animation */
@@ -123,7 +129,7 @@
   height: 14px;
   background: #db2777;
   border-radius: 50%;
-  border: 3px solid #1e1b4b; 
+  border: 3px solid #1e1b4b;
   transition: transform 0.3s ease;
 }
 
@@ -157,7 +163,7 @@
   background: rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   padding: 2rem;
-  margin-bottom: 3rem; /* Reduced Gap */
+  margin: 5rem 0; /* Reduced Gap */
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -313,7 +319,7 @@
 
 /* Footer Action */
 .footerAction {
-  margin-top: 3rem; /* Reduced Gap */
+  margin: 3rem 0; /* Reduced Gap */
   text-align: center;
   padding: 2rem;
   background: rgba(255, 255, 255, 0.03);
@@ -342,7 +348,6 @@
   color: #831843;
 }
 
-
 /* =========================================
    2. 1024px Media Query (Tablet Landscape)
    ========================================= */
@@ -357,6 +362,7 @@
 
   .skillsWrapper {
     padding: 1.5rem;
+    margin: 5rem 0;
   }
 
   .awardsGrid {
@@ -398,7 +404,7 @@
    ========================================= */
 @media (max-width: 425.6px) {
   .resumePageWrapper {
-    padding: 2.5rem 0; /* Maintained Requirement */
+    padding: 3rem 0; /* Maintained Requirement */
   }
 
   .mainHeading {
@@ -412,7 +418,7 @@
   .timelineItem {
     padding: 1rem;
   }
-  
+
   .awardsGrid {
     grid-template-columns: 1fr;
   }
@@ -439,7 +445,7 @@
   }
 
   .timelineDot {
-    left: -1.75rem; 
+    left: -1.75rem;
     width: 12px;
     height: 12px;
   }

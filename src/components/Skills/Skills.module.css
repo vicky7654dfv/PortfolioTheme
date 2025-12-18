@@ -1,7 +1,7 @@
 /* Base Styles */
 .skillsSection {
-  background: linear-gradient(-400deg, #5e53ff 0%, #5e1c37 100%);
-  padding: 5rem 0;
+  background: #0f172a;
+  padding: 4rem 0;
   animation: fadeIn 1s ease-in-out;
 }
 
@@ -29,13 +29,13 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .card {
   background: #161e2e;
-  padding: 2rem;
-  border-radius: 12px;
+  padding: 3rem 2rem;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,35 +46,68 @@
   overflow: hidden;
 }
 
-/* Glow Effect on Hover using CSS Variable */
+/* Glow Effect on Hover */
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   border-color: var(--hover-color);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
 }
 
-.card:hover .iconBox {
-  transform: scale(1.1);
+.card:hover .skillImage {
+  transform: scale(1.05);
+  border-color: var(--hover-color);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 20px var(--hover-color);
 }
 
-.iconBox {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+/* The Container Wrapper */
+.skillImage {
+  /* Removed fixed 150px width/height so the image can grow */
+  width: auto; 
+  min-width: 150px; /* Minimum bold size */
+  max-width: 100%;  /* Allow it to fill the card */
+  
+  /* Styling for the box look */
+  border-radius: 24px; 
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  background: rgba(30, 41, 59, 0.6); 
+  border: 3px solid #334155; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 
+    0 15px 25px -5px rgba(0, 0, 0, 0.4), 
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* THE REQUESTED IMAGE STYLING */
+.skillImage img {
+  width: 800px;
+  height: 800px;
+  /* Max-width/max-height ensures it fits inside the card/wrapper 
+     without breaking the layout, but treats the image as "full size" */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
 }
 
 .skillName {
   color: white;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .skillLevel {
   color: #94a3b8;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 500;
 }
 
 /* ===========================
@@ -85,6 +118,9 @@
 @media (max-width: 1024px) {
   .container { padding: 0 2rem; }
   .grid { gap: 1.5rem; }
+  .card { padding: 2.5rem 1.5rem; }
+  /* Ensure image scales down on smaller screens */
+  .skillImage img { width: 100%; height: auto; }
 }
 
 /* 768px */
@@ -97,11 +133,34 @@
 @media (max-width: 425.6px) {
   .skillsSection { padding: 3rem 0; }
   .grid { grid-template-columns: 1fr; }
-  .card { padding: 1.5rem; flex-direction: row; justify-content: flex-start; gap: 1rem; }
-  .iconBox { margin-bottom: 0; width: 40px; height: 40px; }
+  
+  .card { 
+    padding: 1.5rem; 
+    flex-direction: row; 
+    justify-content: flex-start; 
+    gap: 1.5rem; 
+  }
+  
+  .skillImage { 
+    margin-bottom: 0; 
+    /* Fixed smaller size for mobile layout */
+    width: 80px; 
+    height: 80px; 
+    min-width: 80px;
+    padding: 10px;
+    border-radius: 16px;
+    border-width: 2px;
+  }
+  
+  .skillName { font-size: 1.2rem; margin-bottom: 0.3rem; }
+  .skillLevel { font-size: 0.7rem; }
 }
 
 /* 375.2px */
 @media (max-width: 375.2px) {
   .heading { font-size: 1.8rem; }
+  .card { padding: 1.2rem; gap: 1rem; }
+  .skillImage { width: 70px; height: 70px; min-width: 70px; padding: 8px; }
+  .skillName { font-size: 1.1rem; }
+  .skillLevel { font-size: 0.6rem; }
 }

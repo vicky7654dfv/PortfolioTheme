@@ -1,7 +1,7 @@
 /* Base Styles */
 .banner {
   /* Blush/Dark Gradient: Blends dark header into a creative Blush/Purple vibe */
-  background: linear-gradient(135deg, #1e1b4b 0%, #831843 100%);
+  background: #0f172a;
   min-height: calc(100vh - 80px); /* Adjusts for header height */
   display: flex;
   align-items: center;
@@ -27,7 +27,7 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 6rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -183,7 +183,7 @@
 /* 1024px Media Query */
 @media (max-width: 1024px) {
   .container {
-    padding: 2rem;
+    padding: 6rem 2rem;
     gap: 2rem;
   }
 
@@ -216,6 +216,7 @@
     flex-direction: column; /* Text below image on tablet/mobile */
     text-align: center;
     gap: 3rem;
+    padding: 3rem 2rem;
   }
 
   .contentWrapper {

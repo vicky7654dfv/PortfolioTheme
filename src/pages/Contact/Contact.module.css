@@ -16,9 +16,9 @@
 
 .contactWrapper {
   /* Requested Theme Gradient */
-  background: linear-gradient(135deg, #1e1b4b 0%, #831843 100%);
+  background: #0f172a;
   min-height: 100vh;
-  padding: 2.5rem 0;
+  padding: 4rem 0;
   color: #ffffff;
   animation: fadeIn 1s ease-in-out;
   position: relative;
@@ -391,7 +391,7 @@
    ========================================= */
 @media (max-width: 768px) {
   .contactWrapper {
-    padding: 2.5rem 0;
+    padding: 3rem 0;
   }
 
   .contentGrid {

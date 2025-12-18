@@ -17,7 +17,7 @@ const Header = () => {
   };
 
   const handleLogoClick = () => {
-    window.location.href = "/";
+    window.location.href = "#/";
   };
 
   useEffect(() => {
@@ -45,13 +45,13 @@ const Header = () => {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { name: "About Me", href: "/About" },
-    { name: "Dashboard", href: "/Dashboard" },
-    { name: "Services", href: "/Services" },
-    { name: "Resume", href: "/Resume" },
-    { name: "Contact", href: "/Contact" },
-    { name: "Blog", href: "/Blog" },
-    { name: "Pricing", href: "/Pricing" },
+    { name: "About Me", href: "#/About" },
+    { name: "Dashboard", href: "#/Dashboard" },
+    { name: "Services", href: "#/Services" },
+    { name: "Resume", href: "#/Resume" },
+    { name: "Contact", href: "#/Contact" },
+    { name: "Blog", href: "#/Blog" },
+    { name: "Pricing", href: "#/Pricing" },
   ];
 
   return (
@@ -83,10 +83,10 @@ const Header = () => {
                but CSS opacity controls the visual fade.
             */}
             <div className={styles.dropdownMenu}>
-              <a href="/" className={styles.dropdownItem}>
+              <a href="#/" className={styles.dropdownItem}>
                 Home Page 1
               </a>
-              <a href="/HomePage2" className={styles.dropdownItem}>
+              <a href="#/HomePage2" className={styles.dropdownItem}>
                 Home Page 2
               </a>
             </div>
@@ -140,14 +140,14 @@ const Header = () => {
             {isHomeDropdownOpen && (
               <div className={styles.mobileDropdownMenu}>
                 <a
-                  href="/"
+                  href="#/"
                   className={styles.mobileDropdownItem}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Home Page 1
                 </a>
                 <a
-                  href="/HomePage2"
+                  href="#/HomePage2"
                   className={styles.mobileDropdownItem}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
